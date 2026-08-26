@@ -1,0 +1,888 @@
+/* ============================================
+   归真会 · 样式表
+   温暖的表相之下，空无正在凝视。
+   ============================================ */
+
+/* ---------- 重置与基础 ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "宋体", SimSun, "MS Mincho", serif;
+    background: #f0dcb8;
+    color: #3d2b1f;
+    line-height: 1.8;
+    font-size: 16px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+a { color: #8b4513; text-decoration: underline; }
+a:hover { color: #cc6600; }
+
+/* 微弱的背景纹理 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139,69,19,0.015) 2px, rgba(139,69,19,0.015) 4px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ---------- 布局 ---------- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- 头部 ---------- */
+.site-header {
+    text-align: center;
+    padding: 30px 20px 20px;
+    border-bottom: 3px double #c4a36a;
+    margin-bottom: 30px;
+    background: linear-gradient(180deg, #f5e6c8 0%, #f0dcb8 100%);
+}
+
+.site-header h1 {
+    font-size: 2.5em;
+    color: #8b4513;
+    letter-spacing: 0.3em;
+    text-shadow: 1px 1px 0 #d4a76a;
+    margin-bottom: 5px;
+}
+
+.site-header .subtitle {
+    font-size: 1em;
+    color: #a0724a;
+    letter-spacing: 0.2em;
+}
+
+/* 莲花logo */
+.lotus-logo {
+    display: block;
+    margin: 0 auto 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    user-select: none;
+}
+.lotus-logo:hover { transform: scale(1.05); }
+
+/* 眼睛logo */
+.eye-logo { display: none; }
+.eye-logo.visible { display: block; margin: 0 auto 10px; }
+.lotus-logo.hidden { display: none; }
+
+/* 眼睛眨眼动画 */
+@keyframes eye-blink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.05); }
+}
+.eye-logo svg { animation: eye-blink 4s infinite; transform-origin: center; }
+
+/* ---------- 导航 ---------- */
+nav {
+    text-align: center;
+    margin: 15px 0 25px;
+    padding: 8px;
+    background: #e8d4a8;
+    border-top: 1px solid #c4a36a;
+    border-bottom: 1px solid #c4a36a;
+}
+nav a {
+    display: inline-block;
+    padding: 4px 15px;
+    margin: 0 5px;
+    color: #6b3a1a;
+    text-decoration: none;
+    font-size: 0.95em;
+    border-right: 1px solid #c4a36a;
+}
+nav a:last-child { border-right: none; }
+nav a:hover { background: #d4b888; color: #4a2a0a; }
+nav a.active { font-weight: bold; color: #8b4513; }
+
+/* ---------- 内容区域 ---------- */
+.content {
+    background: rgba(255, 248, 230, 0.6);
+    padding: 25px 30px;
+    border: 1px solid #d4b888;
+    border-radius: 3px;
+    margin-bottom: 25px;
+}
+
+.content h2 {
+    color: #8b4513;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #c4a36a;
+}
+
+.content h3 {
+    color: #a0522d;
+    font-size: 1.15em;
+    margin: 18px 0 10px;
+}
+
+.content p { margin-bottom: 12px; text-indent: 2em; }
+.content p.no-indent { text-indent: 0; }
+
+/* ---------- 闪烁按钮 ---------- */
+.blink-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(180deg, #ff9933, #cc6600);
+    color: #fff !important;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px outset #ffaa44;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: blink-glow 1s infinite;
+    text-indent: 0;
+}
+.blink-btn:hover { background: linear-gradient(180deg, #ffaa44, #dd7711); }
+.blink-btn:active { border-style: inset; }
+
+@keyframes blink-glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(255,153,51,0.5); }
+    50% { box-shadow: 0 0 20px rgba(255,153,51,0.8), 0 0 30px rgba(255,153,51,0.4); }
+}
+
+.btn-center { text-align: center; margin: 30px 0; }
+
+/* ---------- 见证卡片 ---------- */
+.testimony-card {
+    background: rgba(255,250,240,0.7);
+    border: 1px solid #d4b888;
+    border-left: 4px solid #c4a36a;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+}
+.testimony-card .author {
+    text-align: right;
+    color: #a0724a;
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-style: italic;
+}
+.testimony-card .num-hidden {
+    font-weight: bold;
+    color: #8b4513;
+    /* 数字看起来只是普通的加粗词 */
+}
+
+/* ---------- 教义问答 ---------- */
+.qa-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #c4a36a;
+}
+.qa-item:last-child { border-bottom: none; }
+.qa-question {
+    font-weight: bold;
+    color: #8b4513;
+    font-size: 1.05em;
+    margin-bottom: 8px;
+}
+.qa-question::before { content: '问：'; }
+.qa-answer { color: #5a4030; padding-left: 1em; }
+.qa-answer::before { content: '答：'; color: #a0724a; }
+
+/* ---------- 冥想圆环 ---------- */
+.meditation-area {
+    text-align: center;
+    margin: 40px 0;
+}
+.meditation-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #c4a36a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    color: #8b4513;
+    cursor: pointer;
+    position: relative;
+    background: radial-gradient(circle, #f5e6c8, #e8d4a8);
+    transition: all 0.5s;
+    user-select: none;
+}
+.meditation-circle:hover {
+    border-color: #8b4513;
+    box-shadow: 0 0 30px rgba(139,69,19,0.3);
+}
+.meditation-circle.meditating {
+    cursor: default;
+    animation: meditation-pulse 2s infinite;
+}
+@keyframes meditation-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(139,69,19,0.3); }
+    50% { box-shadow: 0 0 50px rgba(139,69,19,0.6); }
+}
+.meditation-circle svg {
+    position: absolute;
+    top: -3px; left: -3px;
+    width: 206px; height: 206px;
+    transform: rotate(-90deg);
+}
+.meditation-circle .progress-ring {
+    fill: none;
+    stroke: #8b4513;
+    stroke-width: 3;
+    stroke-dasharray: 628;
+    stroke-dashoffset: 628;
+    transition: stroke-dashoffset 1s linear;
+}
+.meditation-label {
+    margin-top: 15px;
+    color: #a0724a;
+    font-size: 0.95em;
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    color: #a0724a;
+    font-size: 0.85em;
+    border-top: 1px solid #c4a36a;
+    margin-top: 30px;
+}
+
+/* ---------- 隐藏线索文字 ---------- */
+.hidden-clue {
+    opacity: 0.05;
+    transition: opacity 0.3s;
+    text-align: center;
+    font-size: 0.85em;
+    color: #3d2b1f;
+    margin-top: 20px;
+    user-select: all;
+}
+.hidden-clue:hover { opacity: 0.8; }
+
+/* 隐藏密码输入 */
+.hidden-input-area {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    opacity: 0.1;
+    transition: opacity 0.3s;
+}
+.hidden-input-area:hover { opacity: 1; }
+.hidden-input-area input {
+    padding: 5px 10px;
+    border: 1px solid #c4a36a;
+    background: #f5e6c8;
+    font-family: inherit;
+    font-size: 1em;
+    width: 150px;
+    letter-spacing: 0.3em;
+}
+.hidden-input-area button {
+    padding: 5px 15px;
+    background: #c4a36a;
+    color: #fff;
+    border: 1px solid #a0724a;
+    cursor: pointer;
+    font-family: inherit;
+    margin-left: 5px;
+}
+.hidden-input-area .hint {
+    font-size: 0.8em;
+    color: #a0724a;
+    margin-bottom: 8px;
+}
+.unlock-msg {
+    color: #8b4513;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;
+}
+
+/* admin 隐藏链接 */
+.admin-link {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: 9999;
+    cursor: default;
+}
+
+/* ============================================
+   污染效果 —— 逐级递进
+   ============================================ */
+
+/* --- 20-40: 轻微抖动 + 背景闪烁 --- */
+body.corruption-20 .jitter-target {
+    animation: text-jitter 0.3s infinite;
+    animation-delay: var(--jitter-delay, 0s);
+}
+
+@keyframes text-jitter {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(0.5px, -0.5px); }
+    50% { transform: translate(-0.5px, 0.3px); }
+    75% { transform: translate(0.3px, 0.5px); }
+}
+
+body.corruption-20::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9998;
+    animation: bg-flicker 8s infinite;
+}
+
+@keyframes bg-flicker {
+    0%, 95%, 100% { opacity: 0; }
+    96% { opacity: 0.03; }
+    97% { opacity: 0; }
+    98% { opacity: 0.02; }
+}
+
+/* --- 40-60: 悬停替换 + 鼠标偏移 + 帧闪 --- */
+body.corruption-40 .word-corrupt:hover {
+    /* JS处理实际替换 */
+}
+
+body.corruption-40::after {
+    animation: bg-flicker 5s infinite, frame-flash 15s infinite;
+}
+
+@keyframes frame-flash {
+    0%, 93%, 100% { opacity: 0; }
+    94% { opacity: 0.15; }
+    94.1% { opacity: 0; }
+}
+
+/* 鼠标偏移由JS实现，这里不做CSS */
+
+/* --- 60-80: 暗角 + 警告框样式 --- */
+body.corruption-60 {
+    animation: none;
+}
+
+body.corruption-60::before {
+    box-shadow: inset 0 0 100px 30px rgba(0,0,0,0.3);
+}
+
+body.corruption-60::after {
+    animation: bg-flicker 3s infinite, frame-flash 10s infinite;
+}
+
+.fake-warning {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2b2b2b;
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    padding: 25px 30px;
+    color: #ddd;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    z-index: 10000;
+    box-shadow: 0 0 40px rgba(255,0,0,0.3);
+    max-width: 400px;
+    text-align: center;
+    animation: warning-appear 0.3s ease-out;
+}
+
+@keyframes warning-appear {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.fake-warning .warn-title {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.fake-warning .warn-msg { margin-bottom: 18px; line-height: 1.6; }
+.fake-warning .warn-btn {
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.fake-warning .warn-btn:hover { background: #ff6666; }
+
+/* --- 80-100: 大面积glitch + 弹窗 + 倒置 + 残影 --- */
+body.corruption-80 .glitch-text {
+    position: relative;
+    animation: glitch-shake 0.15s infinite;
+}
+
+body.corruption-80 .glitch-text::before,
+body.corruption-80 .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body.corruption-80 .glitch-text::before {
+    color: #ff0000;
+    animation: glitch-clip-1 0.2s infinite;
+    clip-path: inset(20% 0 60% 0);
+    transform: translate(-2px, 0);
+}
+
+body.corruption-80 .glitch-text::after {
+    color: #00ffff;
+    animation: glitch-clip-2 0.2s infinite;
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(2px, 0);
+}
+
+@keyframes glitch-shake {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, -2px); }
+    80% { transform: translate(1px, 2px); }
+}
+
+@keyframes glitch-clip-1 {
+    0% { clip-path: inset(10% 0 80% 0); transform: translate(-3px, 0); }
+    25% { clip-path: inset(50% 0 30% 0); transform: translate(3px, 0); }
+    50% { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 0); }
+    75% { clip-path: inset(70% 0 10% 0); transform: translate(2px, 0); }
+    100% { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 0); }
+}
+
+@keyframes glitch-clip-2 {
+    0% { clip-path: inset(60% 0 20% 0); transform: translate(3px, 0); }
+    25% { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 0); }
+    50% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 0); }
+    75% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 0); }
+    100% { clip-path: inset(50% 0 30% 0); transform: translate(3px, 0); }
+}
+
+/* 无法关闭的弹窗 */
+.uncloseable-popup {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0a0a0a;
+    border: 1px solid #444;
+    padding: 30px 40px;
+    color: #888;
+    font-family: "Courier New", monospace;
+    z-index: 10001;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(0,0,0,0.8);
+    animation: popup-fadein 1s;
+}
+@keyframes popup-fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.uncloseable-popup .popup-text {
+    font-size: 1.3em;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+}
+.uncloseable-popup .popup-sub {
+    font-size: 0.85em;
+    color: #555;
+}
+.uncloseable-popup .fake-close {
+    position: absolute;
+    top: 5px; right: 10px;
+    cursor: pointer;
+    color: #555;
+    font-size: 1.2em;
+}
+.uncloseable-popup .fake-close:hover { color: #f00; }
+
+/* 屏幕倒置 */
+.screen-invert {
+    animation: screen-flip 2s ease-in-out;
+}
+@keyframes screen-flip {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 90% { transform: rotate(180deg); }
+}
+
+/* 鼠标残影画布 */
+#trail-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9997;
+    display: none;
+}
+body.corruption-80 #trail-canvas { display: block; }
+
+/* 暗角加深 */
+body.corruption-80::before {
+    box-shadow: inset 0 0 150px 50px rgba(0,0,0,0.5);
+}
+
+/* --- 100: 终局 --- */
+body.corruption-100 {
+    animation: corruption-final 0.5s infinite;
+}
+@keyframes corruption-final {
+    0%, 100% { filter: none; }
+    50% { filter: invert(0.1) hue-rotate(10deg); }
+}
+
+/* 黑色遮罩 - 帧闪用 */
+.black-flash {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #000;
+    z-index: 99999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* ============================================
+   真理页 (truth.html) 样式
+   ============================================ */
+.truth-page {
+    background: #000;
+    color: #c0c0c0;
+    font-family: "Courier New", monospace;
+    min-height: 100vh;
+    padding: 40px;
+    line-height: 2;
+}
+.truth-page::before { display: none; }
+.truth-page::after { display: none; }
+
+.truth-doc {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    padding: 40px;
+    background: #0a0a0a;
+}
+.truth-doc h1 {
+    color: #ff3333;
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+.truth-doc .doc-meta {
+    color: #555;
+    font-size: 0.85em;
+    margin-bottom: 25px;
+    text-align: right;
+}
+.truth-doc p {
+    margin-bottom: 15px;
+    text-indent: 0;
+}
+.truth-doc .classified {
+    color: #ff3333;
+    font-weight: bold;
+    border: 1px solid #ff3333;
+    display: inline-block;
+    padding: 2px 10px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    letter-spacing: 0.3em;
+}
+.truth-page .continue-btn {
+    display: block;
+    width: 200px;
+    margin: 40px auto 0;
+    padding: 12px;
+    background: transparent;
+    color: #ff3333;
+    border: 1px solid #ff3333;
+    cursor: pointer;
+    font-family: "Courier New", monospace;
+    font-size: 1em;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.truth-page .continue-btn:hover {
+    background: #ff3333;
+    color: #000;
+}
+
+.truth-denied {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #000;
+    color: #666;
+    font-family: "Courier New", monospace;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* 真理页不应用污染动画和暗角（truth有自己的深色主题） */
+.truth-page.corruption-100 { animation: none !important; }
+.truth-page::before { display: none !important; }
+.truth-page::after { display: none !important; }
+.truth-page .jitter-target { animation: none !important; }
+.truth-page .glitch-text::before,
+.truth-page .glitch-text::after { display: none !important; }
+.truth-page .glitch-text { animation: none !important; }
+.truth-page #trail-canvas { display: none !important; }
+
+/* ============================================
+   终局页 (initiation.html) 样式
+   ============================================ */
+.initiation-page {
+    background: #000;
+    color: #00ff41;
+    font-family: "Courier New", "Consolas", monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    overflow: hidden;
+}
+.initiation-page::before,
+.initiation-page::after { display: none; }
+
+/* 终局进入遮罩：必须点击才能解锁音频 */
+.init-gate {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+.init-gate-text {
+    text-align: center;
+    color: #00ff41;
+    font-family: "Courier New", "Consolas", monospace;
+    animation: gate-flicker 4s infinite;
+}
+.init-gate-title {
+    font-size: 2.2rem;
+    letter-spacing: 0.5em;
+    margin-bottom: 1.5rem;
+    text-indent: 0.5em;
+}
+.init-gate-sub {
+    font-size: 0.95rem;
+    color: #008f28;
+    letter-spacing: 0.15em;
+    margin-bottom: 3rem;
+}
+.init-gate-blink {
+    font-size: 1.5rem;
+    animation: gate-blink 1.2s infinite;
+}
+@keyframes gate-flicker {
+    0%, 95%, 100% { opacity: 1; }
+    96% { opacity: 0.4; }
+    97% { opacity: 1; }
+    98% { opacity: 0.6; }
+}
+@keyframes gate-blink {
+    0%, 100% { opacity: 0.2; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(6px); }
+}
+
+.initiation-content {
+    max-width: 600px;
+    width: 100%;
+}
+.initiation-text {
+    font-size: 1.2em;
+    line-height: 2.2;
+    min-height: 60vh;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.initiation-text .cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background: #00ff41;
+    animation: cursor-blink 0.8s infinite;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+}
+@keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.initiation-input-area {
+    display: none;
+    margin-top: 30px;
+}
+.initiation-input-area label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+.initiation-input-area input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #00ff41;
+    color: #00ff41;
+    font-family: "Courier New", monospace;
+    font-size: 1.2em;
+    padding: 8px 0;
+    width: 100%;
+    outline: none;
+    letter-spacing: 0.2em;
+}
+.initiation-recorded {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #00aa2a;
+}
+
+/* 坍缩动画 */
+.collapsing .initiation-content {
+    animation: collapse 3s forwards;
+}
+@keyframes collapse {
+    0% { transform: scale(1); opacity: 1; }
+    70% { transform: scale(0.01); opacity: 0.5; }
+    100% { transform: scale(0); opacity: 0; }
+}
+.white-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #fff;
+    z-index: 100000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.white-screen.visible { display: flex; }
+.white-screen .thanks {
+    color: #333;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* 刷新警告 */
+.refresh-warning {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ff41;
+    font-family: "Courier New", monospace;
+    font-size: 1.5em;
+    z-index: 100001;
+    display: none;
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+.refresh-warning.visible { display: block; animation: warning-pulse 0.5s infinite; }
+@keyframes warning-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ============================================
+   首次访问警告
+   ============================================ */
+.first-warning {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.first-warning-box {
+    background: #f5f0e0;
+    border: 3px solid #8b4513;
+    padding: 35px 45px;
+    max-width: 450px;
+    text-align: center;
+    font-family: "宋体", SimSun, serif;
+}
+.first-warning-box h3 {
+    color: #8b0000;
+    margin-bottom: 18px;
+    font-size: 1.3em;
+}
+.first-warning-box p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    color: #4a3728;
+    text-indent: 0;
+}
+.warning-btns {
+    position: relative;
+    height: 40px;
+}
+.warning-btns button {
+    padding: 8px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 0 10px;
+}
+.btn-yes {
+    background: #8b4513;
+    color: #fff;
+    border: 2px outset #a0522d;
+}
+.btn-no {
+    background: #ccc;
+    color: #333;
+    border: 2px outset #ddd;
+    position: relative;
+    transition: all 0.15s;
+}
+
+/* ============================================
+   响应式
+   ============================================ */
+@media (max-width: 600px) {
+    .site-header h1 { font-size: 1.8em; letter-spacing: 0.15em; }
+    .content { padding: 15px; }
+    nav a { padding: 4px 8px; font-size: 0.85em; margin: 0 2px; }
+    .container { padding: 10px; }
+    .truth-doc { padding: 20px; }
+    .meditation-circle { width: 150px; height: 150px; font-size: 2em; }
+}

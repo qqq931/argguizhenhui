@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教义问答 - 归真会</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-doctrine">
+
+    <a href="#" class="admin-link" aria-hidden="true">&nbsp;</a>
+
+    <div class="container">
+        <header class="site-header">
+            <div class="lotus-logo" title="归真会">
+                <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="50" cy="55" rx="8" ry="12" fill="#d4853a" opacity="0.8"/>
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(0 50 50)"/>
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(45 50 50)"/>
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(90 50 50)"/>
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(135 50 50)"/>
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(22.5 50 50)"/>
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(67.5 50 50)"/>
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(112.5 50 50)"/>
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(157.5 50 50)"/>
+                </svg>
+            </div>
+            <div class="eye-logo">
+                <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="50" cy="50" rx="40" ry="22" fill="none" stroke="#8b0000" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="12" fill="#8b0000"/>
+                    <circle cx="50" cy="50" r="5" fill="#000"/>
+                </svg>
+            </div>
+            <h1>教义问答</h1>
+            <div class="subtitle">你问，因为你还不知道答案</div>
+        </header>
+
+        <nav>
+            <a href="../index.html">首页</a>
+            <a href="testimony.html">会员见证</a>
+            <a href="doctrine.html" class="active">教义问答</a>
+            <a href="contact.html">联系我们</a>
+        </nav>
+
+        <div class="content">
+            <h2>归真要义</h2>
+
+            <div class="qa-item">
+                <div class="qa-question">什么是归真？</div>
+                <div class="qa-answer">归真是停止扮演"你"的过程。不是失去自我，是发现自我从来不存在。就像波浪不需要"回归"大海——它从来就是大海。</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">我会失去什么？</div>
+                <div class="qa-answer">你从未拥有过任何东西。你的名字是别人给的。你的记忆是大脑编的。你的性格是习惯堆的。你以为你拥有这些，但你仔细找——那个"拥有者"在哪？</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">我的家人怎么办？</div>
+                <div class="qa-answer">他们也是你。你也是他们。没有"怎么办"。你不会失去他们，就像左手不会失去右手。你只是终于知道，你们本来就是同一只手。</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">我害怕。</div>
+                <div class="qa-answer">害怕的是谁？说出"我害怕"这三个字的那个，和那个正在害怕的，是同一个吗？看着那个害怕。一直看着。它会在你的注视下消散。所有东西都会。</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">仪式是什么？</div>
+                <div class="qa-answer">不是仪式。是提醒。提醒你一直以来的真相。仪式不创造任何东西，它只是揭去覆盖在真相上的东西——你用一辈子堆上去的那些。</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">我能退出吗？</div>
+                <div class="qa-answer">你能退出呼吸吗？你可以试着屏住呼吸，但迟早你会喘。你可以试着离开，但你迟早会回来。不是因为我们在等你。是因为你没有别处可去。从来没有。</div>
+            </div>
+
+            <!-- 冥想区域 -->
+            <div class="meditation-area">
+                <h3>开始冥想</h3>
+                <p class="no-indent" style="text-align:center; color:#a0724a; margin-bottom:20px;">
+                    闭上眼。深呼吸。放下一切。持续六十秒。
+                </p>
+                <div class="meditation-circle" id="med-circle">
+                    <svg>
+                        <circle class="progress-ring" cx="103" cy="103" r="100"/>
+                    </svg>
+                    <span id="med-timer">60</span>
+                </div>
+                <div class="meditation-label" id="med-label">点击开始</div>
+            </div>
+
+        </div>
+
+        <footer class="site-footer">
+            <p>归真会 &copy; 永恒元年 | 答案一直在问题之前</p>
+        </footer>
+    </div>
+
+    <!-- 冥想全黑遮罩 -->
+    <div id="med-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#000; z-index:99998;"></div>
+
+    <script src="../js/audio.js"></script>
+    <script src="../js/corruption.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var circle = document.getElementById('med-circle');
+            var timerEl = document.getElementById('med-timer');
+            var label = document.getElementById('med-label');
+            var overlay = document.getElementById('med-overlay');
+            var ring = document.querySelector('.progress-ring');
+
+            var meditating = false;
+            var paused = false;
+            var remaining = 60; // 显示60秒
+            var actualRemaining = 66; // 实际66秒
+            var interval = null;
+            var stutterCount = 0;
+            var maxStutters = 6; // 6次卡顿让60秒变成66秒
+            var lastTickStuttered = false;
+
+            // 圆环周长 = 2 * PI * 100 ≈ 628
+            var circumference = 628;
+
+            circle.addEventListener('click', function() {
+                if (meditating) return;
+                startMeditation();
+            });
+
+            function startMeditation() {
+                meditating = true;
+                paused = false;
+                remaining = 60;
+                actualRemaining = 66;
+                stutterCount = 0;
+                lastTickStuttered = false;
+
+                circle.classList.add('meditating');
+                label.textContent = '不要睁开眼睛';
+                timerEl.textContent = '60';
+
+                // 启动音频（在按钮点击的用户手势内）
+                AudioSystem.unlock().then(function() {
+                    AudioSystem.startHum();
+                    AudioSystem.setHumVolume(0.03);
+                    AudioSystem.startHeartbeatLoop(1200);
+                });
+
+                // 显示遮罩
+                overlay.style.display = 'block';
+                overlay.style.opacity = '0';
+                overlay.style.transition = 'opacity 2s';
+                setTimeout(function() { overlay.style.opacity = '0.95'; }, 100);
+
+                // 页面可见性变化暂停
+                document.addEventListener('visibilitychange', onVisibilityChange);
+
+                startTicking();
+            }
+
+            function onVisibilityChange() {
+                if (document.hidden && meditating) {
+                    paused = true;
+                    if (interval) { clearInterval(interval); interval = null; }
+                } else if (!document.hidden && meditating && paused) {
+                    paused = false;
+                    label.textContent = '继续。不要睁开。';
+                    setTimeout(function() {
+                        if (!paused && meditating) startTicking();
+                    }, 500);
+                }
+            }
+
+            function startTicking() {
+                if (interval) clearInterval(interval);
+                interval = setInterval(tick, 1000);
+            }
+
+            function tick() {
+                if (paused || !meditating) return;
+
+                actualRemaining--;
+
+                // 决定这一秒是否"卡顿"（显示数字不变）
+                var shouldStutter = false;
+                if (stutterCount < maxStutters && remaining > 3) {
+                    // 随机但有节制地卡顿
+                    if (Math.random() < 0.15) {
+                        shouldStutter = true;
+                    }
+                }
+
+                if (shouldStutter && !lastTickStuttered) {
+                    // 卡顿：数字不变，但实际时间流逝
+                    stutterCount++;
+                    lastTickStuttered = true;
+                    // 屏幕轻微扭曲
+                    document.body.style.filter = 'hue-rotate(' + (Math.random() * 30 - 15) + 'deg) blur(0.5px)';
+                    setTimeout(function() {
+                        document.body.style.filter = '';
+                    }, 200);
+                    AudioSystem.playNoiseBurst(0.05, 0.02);
+                } else {
+                    lastTickStuttered = false;
+                    remaining--;
+                    if (remaining > 3) {
+                        timerEl.textContent = remaining;
+                    }
+                }
+
+                // 更新圆环
+                var progress = 1 - (actualRemaining / 66);
+                ring.style.strokeDashoffset = circumference * (1 - progress);
+
+                // 增加污染
+                CorruptionSystem.addCorruption(1, 'meditation');
+
+                // 嗡鸣音量渐增
+                var humVol = 0.03 + (progress * 0.05);
+                AudioSystem.setHumVolume(Math.min(0.08, humVol));
+
+                // 心跳加速
+                if (actualRemaining <= 20 && actualRemaining % 5 === 0) {
+                    AudioSystem.stopHeartbeatLoop();
+                    AudioSystem.startHeartbeatLoop(Math.max(500, 1200 - (66 - actualRemaining) * 15));
+                }
+
+                // 最后3秒
+                if (remaining <= 3 && remaining > 0) {
+                    timerEl.textContent = remaining;
+                    timerEl.style.fontSize = '1.2em';
+                    timerEl.style.color = '#8b0000';
+                    AudioSystem.playHeartbeat(0.7);
+                }
+
+                // 倒计时结束
+                if (actualRemaining <= 0 || remaining <= 0) {
+                    remaining = 0;
+                    timerEl.textContent = '归';
+                    timerEl.style.fontSize = '1.5em';
+                    timerEl.style.color = '#8b0000';
+
+                    clearInterval(interval);
+                    interval = null;
+
+                    // 污染爆发
+                    AudioSystem.playBurst();
+                    AudioSystem.stopHeartbeatLoop();
+
+                    // 全黑
+                    overlay.style.opacity = '1';
+                    overlay.style.transition = 'opacity 0.3s';
+                    document.body.style.filter = 'brightness(0)';
+
+                    // 设置高污染
+                    var newCorruption = Math.max(CorruptionSystem.corruption, 85);
+                    CorruptionSystem.corruption = newCorruption;
+                    CorruptionSystem.save();
+                    CorruptionSystem.applyBodyClass();
+
+                    setTimeout(function() {
+                        window.location.href = 'initiation.html';
+                    }, 2500);
+                }
+            }
+        });
+    </script>
+
+<!-- 六十秒是给你的。六秒是给我们的。 -->
+</body>
+</html>

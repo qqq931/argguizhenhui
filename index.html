@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>归真会 - 找到你真正的归宿</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-index">
+
+    <!-- 隐藏的admin入口 - 1px透明链接 -->
+    <a href="#" class="admin-link" aria-hidden="true">&nbsp;</a>
+
+    <div class="container">
+        <header class="site-header">
+            <!-- 莲花logo (SVG) -->
+            <div class="lotus-logo" title="归真会" aria-label="归真会标志">
+                <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 中心 -->
+                    <ellipse cx="50" cy="55" rx="8" ry="12" fill="#d4853a" opacity="0.8"/>
+                    <!-- 内层花瓣 -->
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(0 50 50)"/>
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(45 50 50)"/>
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(90 50 50)"/>
+                    <ellipse cx="50" cy="38" rx="10" ry="20" fill="#e8a050" opacity="0.7" transform="rotate(135 50 50)"/>
+                    <!-- 外层花瓣 -->
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(22.5 50 50)"/>
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(67.5 50 50)"/>
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(112.5 50 50)"/>
+                    <ellipse cx="50" cy="30" rx="12" ry="25" fill="#f0b870" opacity="0.6" transform="rotate(157.5 50 50)"/>
+                    <!-- 最外层 -->
+                    <ellipse cx="50" cy="25" rx="8" ry="22" fill="#f5cc88" opacity="0.5" transform="rotate(0 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="8" ry="22" fill="#f5cc88" opacity="0.5" transform="rotate(36 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="8" ry="22" fill="#f5cc88" opacity="0.5" transform="rotate(72 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="8" ry="22" fill="#f5cc88" opacity="0.5" transform="rotate(108 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="8" ry="22" fill="#f5cc88" opacity="0.5" transform="rotate(144 50 50)"/>
+                </svg>
+            </div>
+            <!-- 眼睛logo（点击7次后显示） -->
+            <div class="eye-logo" title="...">
+                <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="50" cy="50" rx="40" ry="22" fill="none" stroke="#8b0000" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="12" fill="#8b0000"/>
+                    <circle cx="50" cy="50" r="5" fill="#000"/>
+                    <circle cx="47" cy="47" r="2" fill="#fff" opacity="0.6"/>
+                </svg>
+            </div>
+            <h1>归真会</h1>
+            <div class="subtitle">找到你真正的归宿</div>
+        </header>
+
+        <nav>
+            <a href="index.html" class="active">首页</a>
+            <a href="pages/testimony.html">会员见证</a>
+            <a href="pages/doctrine.html">教义问答</a>
+            <a href="pages/contact.html">联系我们</a>
+        </nav>
+
+        <div class="content">
+            <h2 class="welcome-text">欢迎回家</h2>
+            <p class="no-indent welcome-sub">你是否曾感到，这个世界缺少了什么？</p>
+
+            <p>在这个喧嚣的时代，我们每个人都在寻找——寻找意义，寻找平静，寻找一个真正属于自己的地方。归真会，就是你一直在寻找的答案。</p>
+
+            <h3>放下自我，融入全体</h3>
+            <p>我们相信，痛苦的根源在于"自我"的幻觉。当你放下名字、放下身份、放下那些不属于你的包袱，你会发现一个更深层的真相——你从来不是孤立的。我们都是一体的。</p>
+
+            <p>在归真会，你不需要相信什么。你只需要<strong>放下</strong>。放下评判，放下抗拒，放下"我"。然后，平静会像水一样填满你留下的虚空。</p>
+
+            <h3>会员心声</h3>
+            <div class="testimony-card">
+                <p>"我曾经焦虑痛苦，直到学会了放下。现在我每天都感到<strong>平静</strong>。"</p>
+                <div class="author">—— 明心，入会三年</div>
+            </div>
+            <div class="testimony-card">
+                <p>"归真会给了我第二次<strong>生命</strong>。这里的每个人都是我的家人。"</p>
+                <div class="author">—— 慧然，入会一年半</div>
+            </div>
+
+            <div class="btn-center">
+                <a href="pages/testimony.html" class="blink-btn">开始你的旅程</a>
+            </div>
+        </div>
+
+        <!-- Logo点击7次后显示的隐藏线索 -->
+        <p class="hidden-clue" id="logo-clue" style="display:none;">
+            源码中有真相
+        </p>
+
+        <footer class="site-footer">
+            <p>归真会 &copy; 永恒元年 | 你从未离开过</p>
+            <p style="font-size:0.8em; color:#c4a36a; margin-top:5px;">本站最佳浏览体验：请关闭所有广告拦截器并开启声音</p>
+        </footer>
+    </div>
+
+    <script src="js/audio.js"></script>
+    <script src="js/corruption.js"></script>
+    <script>
+        // 首次访问显示警告
+        document.addEventListener('DOMContentLoaded', function() {
+            // 延迟显示，让页面先渲染
+            setTimeout(function() {
+                CorruptionSystem.showFirstVisitWarning();
+            }, 300);
+        });
+    </script>
+
+<!-- 真正的见证不在他们允许你看的地方。/pages/truth.html 不是给清醒者的。 -->
+<!-- 提示：见证中藏着开门的钥匙。数字不总是数字。 -->
+</body>
+</html>
